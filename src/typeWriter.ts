@@ -24,7 +24,6 @@ export default class TypeWriter {
       ? fullText.substring(0, this.text.length - 1)
       : fullText.substring(0, this.text.length + 1);
 
-
     this.element.innerHTML = this.text;
 
     if (this.isDeleting) { delta /= 2; }

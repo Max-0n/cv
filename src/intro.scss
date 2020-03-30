@@ -1,34 +1,47 @@
 @import 'variables';
 
-.intro {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-center;
+  align-items: flex-center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(94deg, $darkBlue, $lightBlue);
-  animation: introFlop $speed $delay ease-in-out forwards;
+  background: linear-gradient(0deg, $gradientFrom, $gradientTo);
+  // animation: introFlop $speed $delay ease-in-out forwards;
+
+  figure {
+    display: flex;
+    margin: auto auto 50px;
+    border-radius: 100px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 320px;
+    }
+  }
+
 
   #introTypewriter {
-    margin: auto;
+    margin: 0 auto auto;
     color: $white;
     font-size: 4rem;
     font-weight: 700;
-    animation: fontSize $speed $delay ease-in-out forwards;
+    text-align: center;
+    // animation: fontSize $speed $delay ease-in-out forwards;
 
     &::before,
     &::after {
-      content: '< ';
+      content: '"';
+      // content: '< ';
       font-family: Tahoma, Arial, sans-serif;
       font-size: 3.5rem;
       font-weight: 400;
-      animation: fontSize2 $speed $delay ease-in-out forwards;
+      // animation: fontSize2 $speed $delay ease-in-out forwards;
     }
-    &::after { content: ' />'; }
+    // &::after { content: ' />'; }
   }
 }
 
