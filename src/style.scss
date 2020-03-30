@@ -4,7 +4,10 @@
 
 ::selection { background: $gold; }
 
-html { background: $darkBlue; }
+html {
+  background: $darkBlue;
+  animation: htmlBackgroundIntro $speed $delay ease-in-out forwards;
+}
 
 body {
   display: flex;
