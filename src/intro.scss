@@ -7,60 +7,99 @@ header {
   align-items: flex-center;
   height: 100vh;
   width: 100vw;
+  padding: 15px;
+  box-sizing: border-box;
   background: linear-gradient(0deg, $gradientFrom, $gradientTo);
-  // animation: introFlop $speed $delay ease-in-out forwards;
 
-  figure {
-    display: flex;
-    margin: auto auto 50px;
-    border-radius: 100px;
-    overflow: hidden;
+  .logo {
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transform: scale(0);
+    animation: showUp .5s .3s ease-in-out forwards;
 
-    img {
+    .shadow {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-      max-width: 320px;
+      height: 100%;
+      filter: blur(4px);
+    }
+
+    svg {
+      fill: $white;
+
+      .tl,
+      .e,
+      .a,
+      .md {
+        fill: none;
+        stroke: $glowLight;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: .3;
+
+        stroke-width: 5px;
+        stroke-dasharray: 296;
+        stroke-dashoffset: 0;
+        animation: edgeTl 10s linear infinite;
+      }
+
+      .e {
+        stroke-dasharray: 170.4;
+        animation: edgeE 10s linear infinite;
+      }
+
+      .a {
+        stroke-dasharray: 167.52;
+        animation: edgeA 10s linear infinite;
+      }
+
+      .md {
+        stroke-dasharray: 401.85;
+        animation: edgeMd 10s linear infinite;
+      }
+
+
     }
   }
+}
 
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    transform: scale(.8);
+  }
 
-  #introTypewriter {
-    margin: 0 auto auto;
-    color: $white;
-    font-size: 4rem;
-    font-weight: 700;
-    text-align: center;
-    // animation: fontSize $speed $delay ease-in-out forwards;
-
-    &::before,
-    &::after {
-      content: '"';
-      // content: '< ';
-      font-family: Tahoma, Arial, sans-serif;
-      font-size: 3.5rem;
-      font-weight: 400;
-      // animation: fontSize2 $speed $delay ease-in-out forwards;
-    }
-    // &::after { content: ' />'; }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes introFlop {
-  0% { height: 100vh; }
-  100% { height: 50px; }
+@keyframes edgeTl {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 592.02; }
 }
 
-@keyframes fontSize {
-  0% { font-size: 4rem; }
-  100% { font-size: 2rem; }
+@keyframes edgeE {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 340.8; }
 }
 
-@keyframes fontSize2 {
-  0% { font-size: 3.5rem; }
-  100% { font-size: 1.5rem; }
+@keyframes edgeA {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 335.03; }
 }
 
-@keyframes htmlBackgroundIntro {
-  from { background: $darkBlue; }
-  to { background: $white; }
+@keyframes edgeMd {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 803.7; }
 }
