@@ -1,13 +1,13 @@
 {
   "name": "CV",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "TeamLead",
   "repository": {
     "type": "git",
     "url": "git@github.com:Max-0n/cv.git"
   },
   "engines": {
-    "node": "13.12.0"
+    "node": "14.2.0"
   },
   "scripts": {
     "start": "webpack-dev-server --mode=development --open",
